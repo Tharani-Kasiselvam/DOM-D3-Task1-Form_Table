@@ -2,13 +2,14 @@ var cntnr = document.createElement("container")
 cntnr.className="container"
     var cntnr_row = document.createElement("row")
     cntnr_row.className="row"
-        var cntnr_col1 = document.createElement("col-md-6")
-        cntnr_col1.className="col"
-        cntnr_col1.style.width = "30%"
+        var cntnr_col1 = document.createElement("col")
+        cntnr_col1.className="col-lg-6"
+        // cntnr_col1.style.width = "30%"
         cntnr_col1.style.marginLeft="50px"
             var titlediv = document.createElement("div")
             titlediv.style.fontFamily = "Calibri"
-            titlediv.style.textAlign = "center"
+            // titlediv.style.textAlign = "center"
+            titlediv.style.marginLeft = "50px"
             titlediv.innerHTML="<h1><p>FORM</p></h1>"
 
             var formdiv = document.createElement("form")
@@ -19,6 +20,7 @@ cntnr.className="container"
                 form_element.setAttribute(attr,attr_val)
                 form_element.style.fontFamily = "Calibri"
                 form_element.style.paddingRight = "50px"
+                form_element.style.marginLeft = "15px"
                 form_element.innerHTML = content
                 return form_element
             }
@@ -27,6 +29,7 @@ cntnr.className="container"
                 let text_element = document.createElement(tagname)
                 text_element.style.width="100px"
                 text_element.style.height="20px"
+                text_element.style.marginLeft = "15px"
                 text_element.setAttribute(attr,attr_val)
                 text_element.setAttribute(nm_attr,nm_val)
                 text_element.id=idname
@@ -47,6 +50,7 @@ cntnr.className="container"
 
             function radio_create(tagname,attr,attr_val,idname,nm_attr,nm_val,val_attr,val){
                 var rad_btn_elem = document.createElement(tagname)
+                rad_btn_elem.style.marginLeft = "15px"
                 rad_btn_elem.setAttribute(attr,attr_val)
                 rad_btn_elem.setAttribute(nm_attr,nm_val)
                 rad_btn_elem.setAttribute(val_attr,val)
@@ -56,6 +60,7 @@ cntnr.className="container"
 
             function chkbox_create(tagname,attr,attr_val,idname,nm_attr,nm_val,val_attr,val){
                 var chk_box_elem = document.createElement(tagname)
+                chk_box_elem.style.marginLeft = "15px"
                 chk_box_elem.setAttribute(attr,attr_val)
                 chk_box_elem.setAttribute(nm_attr,nm_val)
                 chk_box_elem.setAttribute(val_attr,val)
@@ -72,29 +77,35 @@ cntnr.className="container"
             let fn_brk = brk_create()
             let fn_inp = text_create("input","type","text","f_name")
             let fn2_brk = brk_create()
+            let fn3_brk = brk_create()
+
 
             let l_name = lbl_create("label","for","l_name","Last Name")
-            let ln_inp = text_create("input","type","text","l_name")
             let ln_brk = brk_create()
+            let ln_inp = text_create("input","type","text","l_name")
             let ln2_brk = brk_create()
+            let ln3_brk = brk_create()
 
             let addr = lbl_create("label","for","l_name","Address")
-            let txt_addr = text_ar_create("textarea","type","text","addr")
             let adr_brk = brk_create()
+            let txt_addr = text_ar_create("textarea","type","text","addr")
             let adr2_brk = brk_create()
+            let adr3_brk = brk_create()
 
             let pin_cd = lbl_create("label","for","pin_cd","Pincode")
-            let pin_tx = text_create("input","type","text","pin_cd")
             let pin_brk = brk_create()
+            let pin_tx = text_create("input","type","text","pin_cd")
             let pin2_brk = brk_create()
+            let pin3_brk = brk_create()
 
             let gndr = lbl_create("label","for","gender","Gender")
+            let gndr_brk = brk_create()
             let gndr1_inp = radio_create("input","type","radio","gndr_male","name","gen","value","Male")
             let gndr1_lbl = lbl_create("label","for","male_lbl","Male")
             let gndr2_inp = radio_create("input","type","radio","gndr_fem","name","gen","value","Female")
             let gndr2_lbl = lbl_create("label","for","fem_lbl","Female")
-            let gndr_brk = brk_create()
             let gndr2_brk = brk_create()
+            let gndr3d_brk = brk_create()
 
             let food = lbl_create("label","for","food","Choice of Food <br><i>(Choose atleast 2 food)</i>")
             let food_brk = brk_create()
@@ -121,44 +132,54 @@ cntnr.className="container"
             let food5_brk2 = brk_create()
 
             let state = lbl_create("label","for","state","State")
-            let st_tx = text_create("input","type","text","state")
             let st_brk = brk_create()
+            let st_tx = text_create("input","type","text","state")
             let st1_brk = brk_create()
+            let st2_brk = brk_create()
 
             let country = lbl_create("label","for","cntry","Country")
+            let cntry_brk = brk_create()
             let cntry_tx = text_create("input","type","text","cntry")
-            let scntry_brk = brk_create()
             let cntry1_brk = brk_create()
+            let cntry2_brk = brk_create()
 
             let sbm = document.createElement("button")
             sbm.setAttribute("type","button")
             sbm.innerHTML="Submit"
             sbm.addEventListener("click",loadData)
 
-            formdiv.append(f_name, fn_inp,fn_brk,fn2_brk,
-                            l_name,ln_inp,ln_brk,ln2_brk,
-                            addr,txt_addr,adr_brk,adr2_brk,
-                            pin_cd,pin_tx,pin_brk,pin2_brk,
-                            gndr,gndr1_inp,gndr1_lbl,gndr2_inp,gndr2_lbl,gndr_brk,gndr2_brk,
+            formdiv.append(f_name,fn2_brk,fn_brk,fn_inp,fn2_brk,fn3_brk,
+                            l_name,ln_brk,ln_inp,ln2_brk,ln3_brk,
+                            addr,adr_brk,txt_addr,adr2_brk,adr3_brk,
+                            pin_cd,pin_brk,pin_tx,pin2_brk,pin3_brk,
+                            gndr,gndr_brk,gndr1_inp,gndr1_lbl,gndr2_inp,gndr2_lbl,gndr2_brk,gndr3d_brk,
                             food,food_brk,food1_inp,food1,food1_brk,food2_inp,food2,food2_brk,food3_inp,food3,food3_brk,food4_inp,food4,food4_brk,food5_inp,food5,food5_brk,food5_brk2,
-                            state,st_tx,st_brk,st1_brk,
-                            country,cntry_tx,scntry_brk,cntry1_brk,sbm)
+                            state,st_brk,st_tx,st1_brk,st2_brk,
+                            country,cntry_brk,cntry_tx,cntry1_brk,cntry2_brk,sbm)
 
         cntnr_col1.append(titlediv,formdiv)
       
 
-        var cntnr_col2 = document.createElement("col-md-6")
+        var cntnr_col2 = document.createElement("col")
         cntnr_col2.className="col"
-        cntnr_col2.style.width = "70%"
+        // cntnr_col2.style.width = "70%"
             var tablediv = document.createElement("div")
+            tablediv.style.fontFamily = "Calibri"
+            tablediv.style.textAlign = "center"
+            tablediv.style.marginLeft = "25px"
+            
+            tablediv.innerHTML="<h1><p>TABLE</p></h1>"
+            tablediv.style.width="100%"
 
                 var tbl = document.createElement("table")
                 tbl.className= "table"
-
+                tbl.style.tableLayout = "fixed"
+                // tbl.style.width="100%"
+                tbl.style.marginLeft="-20px"
 
                 var thd = document.createElement("thead")
                 thd.className="thead-dark"
-
+                thd.style.fontSize="10px"
                     function tr_fn(){
                         var tr_elem = document.createElement("tr")
                         return tr_elem
@@ -184,7 +205,7 @@ cntnr.className="container"
                         var th4 = th_fn("col","Address")
                         var th5 = th_fn("col","Pincode")
                         var th6 = th_fn("col","Gender")
-                        var th7 = th_fn("col","Choice of Food")
+                        var th7 = th_fn("col","Food")
                         var th8 = th_fn("col","State")
                         var th9 = th_fn("col","Country")
                     
