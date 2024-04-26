@@ -142,7 +142,7 @@ cntnr.className="container"
         cntnr_col1.append(titlediv,formdiv)
       
 
-        var cntnr_col2 = document.createElement("col")
+        var cntnr_col2 = document.createElement("col-md-6")
         cntnr_col2.className="col"
         cntnr_col2.style.width = "70%"
             var tablediv = document.createElement("div")
