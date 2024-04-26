@@ -25,15 +25,20 @@ cntnr.className="container"
 
             function text_create(tagname,attr,attr_val,idname,nm_attr,nm_val){
                 let text_element = document.createElement(tagname)
+                text_element.style.width="100px"
+                text_element.style.height="20px"
                 text_element.setAttribute(attr,attr_val)
                 text_element.setAttribute(nm_attr,nm_val)
                 text_element.id=idname
+                
                 return text_element
             }
 
 
             function text_ar_create(tagname,attr,attr_val,idname){
                 var tx_ar_element = document.createElement(tagname)
+                tx_ar_element.style.width="100px"
+                tx_ar_element.style.height="50px"
                 tx_ar_element.setAttribute(attr,attr_val)
                 tx_ar_element.id = idname
                 tx_ar_element.style.marginLeft = "15px"
