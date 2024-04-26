@@ -11,6 +11,7 @@ cntnr.className="container"
             titlediv.style.fontFamily = "Calibri"
             titlediv.style.marginLeft = "50px"
             titlediv.innerHTML="<h1><p><b>FORM</b></p></h1>"
+            titlediv.id = "frm_t"
 
             var formdiv = document.createElement("form")
             formdiv.id = "formdiv"
@@ -180,7 +181,7 @@ cntnr.className="container"
 
                 var thd = document.createElement("thead")
                 thd.className="thead-dark"
-                thd.style.fontSize="10px"
+                thd.style.fontSize="12px"
                     function tr_fn(){
                         var tr_elem = document.createElement("tr")
                         return tr_elem
@@ -188,7 +189,7 @@ cntnr.className="container"
 
                     function th_fn(scope_val,content){
                         var th_elem = document.createElement("th")
-                        th_elem.style.fontSize="9px"
+                        th_elem.style.fontSize="12px"
                         th_elem.scope=scope_val
                         th_elem.innerHTML=content
                         return th_elem
@@ -197,7 +198,7 @@ cntnr.className="container"
                     function td_fn(content){
                         var td_elem = document.createElement("td")
                         td_elem.style.textAlign="center"
-                        td_elem.style.fontSize="9px"
+                        td_elem.style.fontSize="12px"
                         td_elem.innerHTML = content
                         return td_elem
                     }
