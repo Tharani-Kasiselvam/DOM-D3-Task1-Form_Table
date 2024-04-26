@@ -3,14 +3,14 @@ cntnr.className="container"
     var cntnr_row = document.createElement("row")
     cntnr_row.className="row"
         var cntnr_col1 = document.createElement("col")
-        cntnr_col1.className="col-lg-6"
-        // cntnr_col1.style.width = "30%"
+        cntnr_col1.className="col"
         cntnr_col1.style.marginLeft="50px"
+        cntnr_col1.style.marginRight="-50px"
+
             var titlediv = document.createElement("div")
             titlediv.style.fontFamily = "Calibri"
-            // titlediv.style.textAlign = "center"
             titlediv.style.marginLeft = "50px"
-            titlediv.innerHTML="<h1><p>FORM</p></h1>"
+            titlediv.innerHTML="<h1><p><b>FORM</b></p></h1>"
 
             var formdiv = document.createElement("form")
             formdiv.id = "formdiv"
@@ -27,9 +27,11 @@ cntnr.className="container"
 
             function text_create(tagname,attr,attr_val,idname,nm_attr,nm_val){
                 let text_element = document.createElement(tagname)
-                text_element.style.width="100px"
-                text_element.style.height="20px"
+                text_element.style.width="150px"
+                text_element.style.height="30px"
+                text_element.style.border = "1px solid black"
                 text_element.style.marginLeft = "15px"
+                text_element.style.fontSize="12px"
                 text_element.setAttribute(attr,attr_val)
                 text_element.setAttribute(nm_attr,nm_val)
                 text_element.id=idname
@@ -40,11 +42,13 @@ cntnr.className="container"
 
             function text_ar_create(tagname,attr,attr_val,idname){
                 var tx_ar_element = document.createElement(tagname)
-                tx_ar_element.style.width="100px"
+                tx_ar_element.style.width="150px"
                 tx_ar_element.style.height="50px"
+                tx_ar_element.style.marginLeft = "15px"
+                tx_ar_element.style.border = "1px solid black"
+                tx_ar_element.style.fontSize="12px"
                 tx_ar_element.setAttribute(attr,attr_val)
                 tx_ar_element.id = idname
-                tx_ar_element.style.marginLeft = "15px"
                 return tx_ar_element
             }
 
@@ -73,32 +77,32 @@ cntnr.className="container"
                 return brk
             }
 
-            let f_name = lbl_create("label","for","f_name","First Name")
+            let f_name = lbl_create("label","for","f_name","First Name:")
             let fn_brk = brk_create()
             let fn_inp = text_create("input","type","text","f_name")
             let fn2_brk = brk_create()
             let fn3_brk = brk_create()
 
 
-            let l_name = lbl_create("label","for","l_name","Last Name")
+            let l_name = lbl_create("label","for","l_name","Last Name:")
             let ln_brk = brk_create()
             let ln_inp = text_create("input","type","text","l_name")
             let ln2_brk = brk_create()
             let ln3_brk = brk_create()
 
-            let addr = lbl_create("label","for","l_name","Address")
+            let addr = lbl_create("label","for","l_name","Address:")
             let adr_brk = brk_create()
             let txt_addr = text_ar_create("textarea","type","text","addr")
             let adr2_brk = brk_create()
             let adr3_brk = brk_create()
 
-            let pin_cd = lbl_create("label","for","pin_cd","Pincode")
+            let pin_cd = lbl_create("label","for","pin_cd","Pincode:")
             let pin_brk = brk_create()
             let pin_tx = text_create("input","type","text","pin_cd")
             let pin2_brk = brk_create()
             let pin3_brk = brk_create()
 
-            let gndr = lbl_create("label","for","gender","Gender")
+            let gndr = lbl_create("label","for","gender","Gender:")
             let gndr_brk = brk_create()
             let gndr1_inp = radio_create("input","type","radio","gndr_male","name","gen","value","Male")
             let gndr1_lbl = lbl_create("label","for","male_lbl","Male")
@@ -107,7 +111,7 @@ cntnr.className="container"
             let gndr2_brk = brk_create()
             let gndr3d_brk = brk_create()
 
-            let food = lbl_create("label","for","food","Choice of Food <br><i>(Choose atleast 2 food)</i>")
+            let food = lbl_create("label","for","food","Choice of Food: <br><i>(Choose atleast 2 food)</i>")
             let food_brk = brk_create()
 
             let food1_inp = chkbox_create("input","type","checkbox","ch_briyani","name","food","value","Briyani")
@@ -131,13 +135,13 @@ cntnr.className="container"
             let food5_brk = brk_create()
             let food5_brk2 = brk_create()
 
-            let state = lbl_create("label","for","state","State")
+            let state = lbl_create("label","for","state","State:")
             let st_brk = brk_create()
             let st_tx = text_create("input","type","text","state")
             let st1_brk = brk_create()
             let st2_brk = brk_create()
 
-            let country = lbl_create("label","for","cntry","Country")
+            let country = lbl_create("label","for","cntry","Country:")
             let cntry_brk = brk_create()
             let cntry_tx = text_create("input","type","text","cntry")
             let cntry1_brk = brk_create()
@@ -148,7 +152,7 @@ cntnr.className="container"
             sbm.innerHTML="Submit"
             sbm.addEventListener("click",loadData)
 
-            formdiv.append(f_name,fn2_brk,fn_brk,fn_inp,fn2_brk,fn3_brk,
+            formdiv.append(f_name,fn_brk,fn_inp,fn2_brk,fn3_brk,
                             l_name,ln_brk,ln_inp,ln2_brk,ln3_brk,
                             addr,adr_brk,txt_addr,adr2_brk,adr3_brk,
                             pin_cd,pin_brk,pin_tx,pin2_brk,pin3_brk,
@@ -162,19 +166,16 @@ cntnr.className="container"
 
         var cntnr_col2 = document.createElement("col")
         cntnr_col2.className="col"
-        // cntnr_col2.style.width = "70%"
+        cntnr_col2.style.width = "70%"
             var tablediv = document.createElement("div")
             tablediv.style.fontFamily = "Calibri"
             tablediv.style.textAlign = "center"
             tablediv.style.marginLeft = "25px"
             
-            tablediv.innerHTML="<h1><p>TABLE</p></h1>"
-            tablediv.style.width="100%"
+            tablediv.innerHTML="<h1><p><b>TABLE</b></p></h1>"
 
                 var tbl = document.createElement("table")
                 tbl.className= "table"
-                tbl.style.tableLayout = "fixed"
-                // tbl.style.width="100%"
                 tbl.style.marginLeft="-20px"
 
                 var thd = document.createElement("thead")
@@ -187,6 +188,7 @@ cntnr.className="container"
 
                     function th_fn(scope_val,content){
                         var th_elem = document.createElement("th")
+                        th_elem.style.fontSize="9px"
                         th_elem.scope=scope_val
                         th_elem.innerHTML=content
                         return th_elem
@@ -194,30 +196,29 @@ cntnr.className="container"
 
                     function td_fn(content){
                         var td_elem = document.createElement("td")
+                        td_elem.style.textAlign="center"
+                        td_elem.style.fontSize="9px"
                         td_elem.innerHTML = content
                         return td_elem
                     }
 
                     var tr = tr_fn()
-                        var th1 = th_fn("col","S.No")
-                        var th2 = th_fn("col","First Name")
-                        var th3 = th_fn("col","Last Name")
-                        var th4 = th_fn("col","Address")
-                        var th5 = th_fn("col","Pincode")
-                        var th6 = th_fn("col","Gender")
-                        var th7 = th_fn("col","Food")
-                        var th8 = th_fn("col","State")
-                        var th9 = th_fn("col","Country")
+                        var th1 = th_fn("col","First Name")
+                        var th2 = th_fn("col","Last Name")
+                        var th3 = th_fn("col","Address")
+                        var th4 = th_fn("col","Pincode")
+                        var th5 = th_fn("col","Gender")
+                        var th6 = th_fn("col","Food")
+                        var th7 = th_fn("col","State")
+                        var th8 = th_fn("col","Country")
                     
-                    tr.append(th1,th2,th3,th4,th5,th6,th7,th8,th9)
+                    tr.append(th1,th2,th3,th4,th5,th6,th7,th8)
                 thd.appendChild(tr)
 
             var tbdy = document.createElement("tbody")
 
                 function loadData(){
                     var tr1 = tr_fn()
-
-                        var th1a = th_fn("row","1")
 
                         var td1a = td_fn(document.getElementById("f_name").value)
                         var td1b = td_fn(document.getElementById("l_name").value)
@@ -258,7 +259,7 @@ cntnr.className="container"
                         var td1g = td_fn(document.getElementById("state").value)
                         var td1h = td_fn(document.getElementById("cntry").value)
                     
-                    tr1.append(th1a,td1a,td1b,td1c,td1d,td1e,td1f,td1g,td1h)
+                    tr1.append(td1a,td1b,td1c,td1d,td1e,td1f,td1g,td1h)
 
                 tbdy.append(tr1)
                 formdiv.reset()
